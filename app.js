@@ -11,10 +11,11 @@ const qouteGenerator = async () => {
 };
 
 const generateContainer = async () => {
+  loader.style.display = "block";
   let { author, tag, text } = await qouteGenerator();
 
   const container = document.createElement("div");
-
+  loader.style.display = "none";
   container.classList.add("container");
   container.innerHTML = `<p class="text"><i class="bi bi-quote sign"></i>${text}</p>
             <p class="author">${author}</p>
